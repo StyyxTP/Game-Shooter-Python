@@ -10,7 +10,7 @@ class Player(animation.AnimateSprite):
         self.health = 100
         self.max_health = 100
         self.attack = 10
-        self.velocity = 5
+        self.velocity = 4
         self.all_projectiles = pygame.sprite.Group()
         self.rect = self.image.get_rect()
         self.rect.x = 450
@@ -28,6 +28,7 @@ class Player(animation.AnimateSprite):
             #creer une nouvelle instance de projectile
             self.all_projectiles.add(Projectile(self))
             self.strat_animation()
+            self.game.sound_manager.play("tir")
             
 
 
